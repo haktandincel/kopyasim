@@ -17,6 +17,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject playerChair = GameObject.FindWithTag("PlayerChair");
+            if (playerChair == null)
+    {
+        Debug.LogWarning("PlayerChair etiketli obje bulunamadı.");
+        return;
+    }
+            this.gameObject.transform.position = playerChair.transform.position+ new Vector3(0, 1, 0);
+            this.gameObject.transform.rotation = playerChair.transform.rotation;
+        }
+
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
