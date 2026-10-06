@@ -1,0 +1,2514 @@
+{
+  "categories": [
+    {
+      "category": "Tarih",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Osmanlı Devleti'nin Rumeli'deki ilk kalıcı üssü kabul edilen yer hangisidir?",
+          "options": [
+            "Edirne",
+            "Gelibolu",
+            "Filibe",
+            "Selanik"
+          ],
+          "correctAnswer": "Gelibolu"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Karlofça Antlaşması hangi yıl imzalanmıştır?",
+          "options": [
+            "1683",
+            "1699",
+            "1711",
+            "1718"
+          ],
+          "correctAnswer": "1699"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Kanun-ı Esasi hangi padişah döneminde ilan edilmiştir?",
+          "options": [
+            "Abdülaziz",
+            "V. Murad",
+            "II. Abdülhamid",
+            "Abdülmecid"
+          ],
+          "correctAnswer": "II. Abdülhamid"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Magna Carta hangi kral döneminde imzalanmıştır?",
+          "options": [
+            "I. Richard",
+            "Yurtsuz John",
+            "III. Henry",
+            "II. Edward"
+          ],
+          "correctAnswer": "Yurtsuz John"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Otuz Yıl Savaşları'nı sona erdiren antlaşmalar hangisidir?",
+          "options": [
+            "Utrecht",
+            "Augsburg",
+            "Westphalia",
+            "Versailles"
+          ],
+          "correctAnswer": "Westphalia"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Napolyon'un Rusya Seferi hangi yıl gerçekleşmiştir?",
+          "options": [
+            "1808",
+            "1810",
+            "1812",
+            "1815"
+          ],
+          "correctAnswer": "1812"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Tanzimat Fermanı'nın diğer adı hangisidir?",
+          "options": [
+            "Gülhane Hatt-ı Hümayunu",
+            "Sened-i İttifak",
+            "Islahat Fermanı",
+            "Hatt-ı Cedid"
+          ],
+          "correctAnswer": "Gülhane Hatt-ı Hümayunu"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Lale Devri'ni sona erdiren isyan hangisidir?",
+          "options": [
+            "Kabakçı Mustafa",
+            "Patrona Halil",
+            "Celali",
+            "Şeyh Bedrettin"
+          ],
+          "correctAnswer": "Patrona Halil"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Bizans'ın son imparatoru kimdir?",
+          "options": [
+            "XI. Konstantinos",
+            "VIII. Ioannes",
+            "VI. Leon",
+            "I. Aleksios"
+          ],
+          "correctAnswer": "XI. Konstantinos"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Osmanlı-Safevi sınırının büyük ölçüde belirlenmesini sağlayan 1639 antlaşması hangisidir?",
+          "options": [
+            "Amasya",
+            "Ferhat Paşa",
+            "Kasr-ı Şirin",
+            "Nasuh Paşa"
+          ],
+          "correctAnswer": "Kasr-ı Şirin"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Batı Roma İmparatorluğu'nun geleneksel yıkılış tarihi hangisidir?",
+          "options": [
+            "395",
+            "410",
+            "476",
+            "527"
+          ],
+          "correctAnswer": "476"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "II. Viyana Kuşatması sırasında Osmanlı sadrazamı kimdi?",
+          "options": [
+            "Sokollu Mehmed Paşa",
+            "Merzifonlu Kara Mustafa Paşa",
+            "Köprülü Mehmed Paşa",
+            "Baltacı Mehmed Paşa"
+          ],
+          "correctAnswer": "Merzifonlu Kara Mustafa Paşa"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Osmanlı'nın ilk daimî elçilikleri hangi padişah döneminde açılmıştır?",
+          "options": [
+            "III. Ahmed",
+            "III. Selim",
+            "II. Mahmud",
+            "Abdülmecid"
+          ],
+          "correctAnswer": "III. Selim"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Berlin Duvarı hangi yıl inşa edilmeye başlanmıştır?",
+          "options": [
+            "1959",
+            "1961",
+            "1963",
+            "1965"
+          ],
+          "correctAnswer": "1961"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Görseldeki hükümdar aşağıdaki savaşlardan hangisinde kesin yenilgiye uğramıştır?",
+          "options": [
+            "Austerlitz",
+            "Borodino",
+            "Waterloo",
+            "Jena"
+          ],
+          "correctAnswer": "Waterloo",
+          "imageDescription": "Napolyon Bonapart'ın Jacques-Louis David tarafından yapılmış ünlü at üzerindeki portresi"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Bu taşın çözülmesinde önemli rol oynayan bilim insanı kimdir?",
+          "options": [
+            "Howard Carter",
+            "Jean-François Champollion",
+            "Heinrich Schliemann",
+            "Arthur Evans"
+          ],
+          "correctAnswer": "Jean-François Champollion",
+          "imageDescription": "Rosetta Taşı"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu yapının günümüzdeki ana binası hangi Bizans imparatoru döneminde yaptırılmıştır?",
+          "options": [
+            "I. Konstantinos",
+            "I. Justinianus",
+            "II. Theodosius",
+            "Herakleios"
+          ],
+          "correctAnswer": "I. Justinianus",
+          "imageDescription": "Ayasofya'nın dış görünümü"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu olay hangi tarihte gerçekleşmiştir?",
+          "options": [
+            "19 Mayıs 1919",
+            "23 Nisan 1920",
+            "30 Ağustos 1922",
+            "29 Ekim 1923"
+          ],
+          "correctAnswer": "19 Mayıs 1919",
+          "imageDescription": "Mustafa Kemal Atatürk'ün Samsun'a çıkışını temsil eden fotoğraf veya Bandırma Vapuru"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Duvarın açılması hangi yılda gerçekleşmiştir?",
+          "options": [
+            "1987",
+            "1988",
+            "1989",
+            "1991"
+          ],
+          "correctAnswer": "1989",
+          "imageDescription": "Berlin Duvarı'nın yıkılışından bir fotoğraf"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "I. Dünya Savaşı sonrasında Almanya ile imzalanan antlaşma burada hangi yıl imzalanmıştır?",
+          "options": [
+            "1918",
+            "1919",
+            "1920",
+            "1921"
+          ],
+          "correctAnswer": "1919",
+          "imageDescription": "Versailles Sarayı'nın Aynalı Salon'u"
+        }
+      ]
+    },
+    {
+      "category": "Coğrafya",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Dünyanın yüzölçümü bakımından ikinci büyük ülkesi hangisidir?",
+          "options": [
+            "Çin",
+            "Kanada",
+            "ABD",
+            "Brezilya"
+          ],
+          "correctAnswer": "Kanada"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Volga Nehri hangi denize dökülür?",
+          "options": [
+            "Karadeniz",
+            "Baltık Denizi",
+            "Hazar Denizi",
+            "Azak Denizi"
+          ],
+          "correctAnswer": "Hazar Denizi"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Dünyanın en derin okyanus çukuru hangisidir?",
+          "options": [
+            "Tonga",
+            "Mariana",
+            "Java",
+            "Porto Riko"
+          ],
+          "correctAnswer": "Mariana"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Aconcagua hangi sıradağlardadır?",
+          "options": [
+            "Alpler",
+            "Andlar",
+            "Kayalık Dağları",
+            "Atlas"
+          ],
+          "correctAnswer": "Andlar"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Lesotho tamamen hangi ülkeyle çevrilidir?",
+          "options": [
+            "Botsvana",
+            "Güney Afrika",
+            "Esvatini",
+            "Namibya"
+          ],
+          "correctAnswer": "Güney Afrika"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Atacama Çölü'nün büyük bölümü hangi ülkededir?",
+          "options": [
+            "Peru",
+            "Şili",
+            "Arjantin",
+            "Bolivya"
+          ],
+          "correctAnswer": "Şili"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Ganj-Brahmaputra Deltası'nın büyük bölümü hangi ülkededir?",
+          "options": [
+            "Hindistan",
+            "Bangladeş",
+            "Myanmar",
+            "Nepal"
+          ],
+          "correctAnswer": "Bangladeş"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Ural Dağları geleneksel olarak hangi kıtaları ayırır?",
+          "options": [
+            "Avrupa-Afrika",
+            "Avrupa-Asya",
+            "Asya-Afrika",
+            "Asya-Amerika"
+          ],
+          "correctAnswer": "Avrupa-Asya"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Afrika'nın yüzölçümü bakımından en büyük ülkesi hangisidir?",
+          "options": [
+            "Sudan",
+            "Cezayir",
+            "Libya",
+            "Demokratik Kongo Cumhuriyeti"
+          ],
+          "correctAnswer": "Cezayir"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Afrika'nın en büyük gölü hangisidir?",
+          "options": [
+            "Tanganika",
+            "Victoria",
+            "Malawi",
+            "Çad"
+          ],
+          "correctAnswer": "Victoria"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Gobi Çölü ağırlıklı olarak hangi iki ülkededir?",
+          "options": [
+            "Çin-Rusya",
+            "Çin-Moğolistan",
+            "Kazakistan-Moğolistan",
+            "Çin-Kazakistan"
+          ],
+          "correctAnswer": "Çin-Moğolistan"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Madagaskar ile Afrika arasında hangi kanal bulunur?",
+          "options": [
+            "Mozambik Kanalı",
+            "Zanzibar Kanalı",
+            "Aden Kanalı",
+            "Malakka Boğazı"
+          ],
+          "correctAnswer": "Mozambik Kanalı"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Titicaca Gölü hangi iki ülke arasındadır?",
+          "options": [
+            "Peru-Şili",
+            "Peru-Bolivya",
+            "Bolivya-Şili",
+            "Peru-Ekvador"
+          ],
+          "correctAnswer": "Peru-Bolivya"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Avrupa'nın en uzun nehri hangisidir?",
+          "options": [
+            "Tuna",
+            "Volga",
+            "Don",
+            "Dinyeper"
+          ],
+          "correctAnswer": "Volga"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Görseldeki ülkenin başkenti hangisidir?",
+          "options": [
+            "Milano",
+            "Roma",
+            "Napoli",
+            "Torino"
+          ],
+          "correctAnswer": "Roma",
+          "imageDescription": "İtalya'nın harita silüeti"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Bu ülke hangi iki tektonik levhanın sınırında yer alır?",
+          "options": [
+            "Afrika-Avrasya",
+            "Kuzey Amerika-Avrasya",
+            "Pasifik-Kuzey Amerika",
+            "Afrika-Güney Amerika"
+          ],
+          "correctAnswer": "Kuzey Amerika-Avrasya",
+          "imageDescription": "İzlanda'nın uydu görüntüsü"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu dağ hangi ülkededir?",
+          "options": [
+            "Kenya",
+            "Tanzanya",
+            "Uganda",
+            "Etiyopya"
+          ],
+          "correctAnswer": "Tanzanya",
+          "imageDescription": "Kilimanjaro Dağı"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Kanal hangi iki okyanusu birbirine bağlar?",
+          "options": [
+            "Atlas-Hint",
+            "Atlas-Pasifik",
+            "Pasifik-Hint",
+            "Arktik-Atlas"
+          ],
+          "correctAnswer": "Atlas-Pasifik",
+          "imageDescription": "Panama Kanalı'nın uydu veya harita görüntüsü"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Japonya'nın en büyük adası hangisidir?",
+          "options": [
+            "Hokkaido",
+            "Honshu",
+            "Kyushu",
+            "Shikoku"
+          ],
+          "correctAnswer": "Honshu",
+          "imageDescription": "Japonya haritası, dört ana ada belirgin"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Bu göl hangi özelliğiyle dünya rekoruna sahiptir?",
+          "options": [
+            "En büyük yüzölçümü",
+            "En derin tatlı su gölü",
+            "En tuzlu göl",
+            "En yüksek rakımlı göl"
+          ],
+          "correctAnswer": "En derin tatlı su gölü",
+          "imageDescription": "Baykal Gölü'nün haritası veya uydu görüntüsü"
+        }
+      ]
+    },
+    {
+      "category": "Bilim",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Atom numarası 74 olan element hangisidir?",
+          "options": [
+            "Renyum",
+            "Tungsten",
+            "Osmiyum",
+            "Platin"
+          ],
+          "correctAnswer": "Tungsten"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Protein sentezinden sorumlu temel hücresel yapı hangisidir?",
+          "options": [
+            "Lizozom",
+            "Ribozom",
+            "Golgi",
+            "Sentrozom"
+          ],
+          "correctAnswer": "Ribozom"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Elektromanyetik spektrumda en kısa dalga boyuna sahip ışın hangisidir?",
+          "options": [
+            "X ışını",
+            "Gama",
+            "Ultraviyole",
+            "Mikrodalga"
+          ],
+          "correctAnswer": "Gama"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Avogadro sabitinin yaklaşık değeri hangisidir?",
+          "options": [
+            "6,022×10²²",
+            "6,022×10²³",
+            "6,022×10²⁴",
+            "6,022×10²¹"
+          ],
+          "correctAnswer": "6,022×10²³"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "DNA'da adenin hangi bazla eşleşir?",
+          "options": [
+            "Guanin",
+            "Timin",
+            "Sitozin",
+            "Urasil"
+          ],
+          "correctAnswer": "Timin"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "İnsan kanının normal pH değeri yaklaşık hangi aralıktadır?",
+          "options": [
+            "6,8–7,0",
+            "7,35–7,45",
+            "7,6–7,8",
+            "8,0–8,2"
+          ],
+          "correctAnswer": "7,35–7,45"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Periyodik tablodaki en elektronegatif element hangisidir?",
+          "options": [
+            "Oksijen",
+            "Flor",
+            "Klor",
+            "Azot"
+          ],
+          "correctAnswer": "Flor"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Mitokondride ATP üretiminin büyük kısmı hangi süreçle gerçekleşir?",
+          "options": [
+            "Glikoliz",
+            "Oksidatif fosforilasyon",
+            "Transkripsiyon",
+            "Fermantasyon"
+          ],
+          "correctAnswer": "Oksidatif fosforilasyon"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Elektronun kütlesi protonun yaklaşık kaçta biridir?",
+          "options": [
+            "1/184",
+            "1/1836",
+            "1/18.360",
+            "1/918"
+          ],
+          "correctAnswer": "1/1836"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "İnsan vücudundaki en küçük kemik hangisidir?",
+          "options": [
+            "Örs",
+            "Üzengi",
+            "Çekiç",
+            "Dil kemiği"
+          ],
+          "correctAnswer": "Üzengi"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Bir mol ideal gaz 0 °C ve 1 atm'de yaklaşık kaç litre kaplar?",
+          "options": [
+            "11,2",
+            "22,4",
+            "24,5",
+            "44,8"
+          ],
+          "correctAnswer": "22,4"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Güneş'teki temel enerji üretim mekanizması hangisidir?",
+          "options": [
+            "Fisyon",
+            "Proton-proton füzyonu",
+            "Yanma",
+            "Nötron bozunması"
+          ],
+          "correctAnswer": "Proton-proton füzyonu"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Kuvvetin SI birimi hangisidir?",
+          "options": [
+            "Joule",
+            "Newton",
+            "Pascal",
+            "Watt"
+          ],
+          "correctAnswer": "Newton"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Nobel Ödülü geleneksel olarak hangi alanda verilmez?",
+          "options": [
+            "Fizik",
+            "Matematik",
+            "Kimya",
+            "Tıp"
+          ],
+          "correctAnswer": "Matematik"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Görseldeki molekülde sitozin hangi bazla eşleşir?",
+          "options": [
+            "Adenin",
+            "Guanin",
+            "Timin",
+            "Urasil"
+          ],
+          "correctAnswer": "Guanin",
+          "imageDescription": "DNA çift sarmal modeli"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "İç zar kıvrımlarına ne ad verilir?",
+          "options": [
+            "Grana",
+            "Krista",
+            "Tilakoid",
+            "Stroma"
+          ],
+          "correctAnswer": "Krista",
+          "imageDescription": "Mitokondrinin kesit şeması"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Okla gösterilen araç hangisidir?",
+          "options": [
+            "Beher",
+            "Erlenmayer",
+            "Balon joje",
+            "Mezür"
+          ],
+          "correctAnswer": "Erlenmayer",
+          "imageDescription": "Erlenmayer, beher, mezür ve balon içeren laboratuvar araçları; ok Erlenmayer'i gösteriyor"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu gezegenin en büyük uydusu hangisidir?",
+          "options": [
+            "Europa",
+            "Titan",
+            "Ganymede",
+            "Triton"
+          ],
+          "correctAnswer": "Titan",
+          "imageDescription": "Satürn'ün fotoğrafı"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "İşaretli bölüm kanı doğrudan hangi damara pompalar?",
+          "options": [
+            "Akciğer atardamarı",
+            "Aort",
+            "Ana toplardamar",
+            "Akciğer toplardamarı"
+          ],
+          "correctAnswer": "Aort",
+          "imageDescription": "İnsan kalbinin anatomik şeması, sol karıncık işaretli"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Bu element hangi element grubundadır?",
+          "options": [
+            "Soy gazlar",
+            "Halojenler",
+            "Alkali metaller",
+            "Toprak alkali metaller"
+          ],
+          "correctAnswer": "Halojenler",
+          "imageDescription": "Periyodik tablo üzerinde F elementi vurgulanmış"
+        }
+      ]
+    },
+    {
+      "category": "Matematik ve Mantık",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "2^(x+1)=32 olduğuna göre x kaçtır?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctAnswer": "4"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "log₂(x-1)=3 olduğuna göre x kaçtır?",
+          "options": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "correctAnswer": "9"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "x + 1/x = 3 ise x² + 1/x² kaçtır?",
+          "options": [
+            "5",
+            "7",
+            "9",
+            "11"
+          ],
+          "correctAnswer": "7"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Bir sınıfta 8 erkek ve 6 kız öğrenci vardır. Rastgele seçilen 3 öğrencinin tamamının kız olma olasılığı kaçtır?",
+          "options": [
+            "5/91",
+            "10/91",
+            "15/91",
+            "20/91"
+          ],
+          "correctAnswer": "5/91"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "7 kişilik bir gruptan başkan ve başkan yardımcısı kaç farklı şekilde seçilebilir?",
+          "options": [
+            "21",
+            "35",
+            "42",
+            "49"
+          ],
+          "correctAnswer": "42"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "3^2026 sayısının birler basamağı kaçtır?",
+          "options": [
+            "1",
+            "3",
+            "7",
+            "9"
+          ],
+          "correctAnswer": "9"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "2^100 sayısının 7 ile bölümünden kalan kaçtır?",
+          "options": [
+            "1",
+            "2",
+            "4",
+            "6"
+          ],
+          "correctAnswer": "2"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "x²-8x+12=0 denkleminin kökleri a ve b ise a²+b² kaçtır?",
+          "options": [
+            "36",
+            "40",
+            "48",
+            "52"
+          ],
+          "correctAnswer": "40"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Bir aritmetik dizinin 5. terimi 17, 11. terimi 41 ise ilk terimi kaçtır?",
+          "options": [
+            "-1",
+            "1",
+            "3",
+            "5"
+          ],
+          "correctAnswer": "1"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "1+3+5+...+39 toplamı kaçtır?",
+          "options": [
+            "361",
+            "380",
+            "400",
+            "420"
+          ],
+          "correctAnswer": "400"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "sin x = 3/5 ve x dar açı ise tan x kaçtır?",
+          "options": [
+            "3/4",
+            "4/3",
+            "3/5",
+            "5/4"
+          ],
+          "correctAnswer": "3/4"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "f(x)=2x²-3x+1 ise f(2)-f(-1) kaçtır?",
+          "options": [
+            "-2",
+            "-4",
+            "-6",
+            "-8"
+          ],
+          "correctAnswer": "-6"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "5 farklı kitap bir rafa dizilecektir. İki belirli kitabın yan yana gelme olasılığı kaçtır?",
+          "options": [
+            "1/5",
+            "2/5",
+            "1/2",
+            "3/5"
+          ],
+          "correctAnswer": "2/5"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "x+y=10 ve xy=21 olduğuna göre x³+y³ kaçtır?",
+          "options": [
+            "280",
+            "310",
+            "370",
+            "420"
+          ],
+          "correctAnswer": "370"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "x kaçtır?",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "correctAnswer": "12",
+          "imageDescription": "Bir dik üçgen; dik kenarlardan biri 9, hipotenüs 15, diğer dik kenar x"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Parabolün tepe noktasının x-koordinatı kaçtır?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctAnswer": "2",
+          "imageDescription": "Koordinat düzleminde y=x²-4x+3 parabolü"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Gösterilen sektörün alanı kaç cm²'dir?",
+          "options": [
+            "6π",
+            "9π",
+            "12π",
+            "18π"
+          ],
+          "correctAnswer": "12π",
+          "imageDescription": "Bir çember; merkez açı 120°, yarıçap 6 cm"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Akrep ile yelkovan arasındaki küçük açı kaç derecedir?",
+          "options": [
+            "120°",
+            "125°",
+            "130°",
+            "140°"
+          ],
+          "correctAnswer": "130°",
+          "imageDescription": "Saat 03.40'ı gösteriyor"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Küp kapatıldığında A yüzünün karşısında hangi yüz bulunur?",
+          "options": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "correctAnswer": "F",
+          "imageDescription": "Küpün açınımı; merkezde A, sağında B, solunda C, üstünde D, altında E, B'nin sağında F"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Aynı kurala göre soru işareti yerine hangi sayı gelmelidir?",
+          "options": [
+            "61",
+            "63",
+            "65",
+            "67"
+          ],
+          "correctAnswer": "65",
+          "imageDescription": "Sayı örüntüsü bulunan üç üçgen. İlkinde üstte 3, altta 4 ve 5, merkezde 17. İkincide üstte 5, altta 6 ve 7, merkezde 37. Üçüncüde üstte 7, altta 8 ve 9, merkezde ?"
+        }
+      ]
+    },
+    {
+      "category": "Edebiyat",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Aşağıdaki eserlerden hangisi distopya türünün önemli örneklerinden biridir?",
+          "options": [
+            "Madame Bovary",
+            "Cesur Yeni Dünya",
+            "Sefiller",
+            "Budala"
+          ],
+          "correctAnswer": "Cesur Yeni Dünya"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Tutunamayanlar romanındaki Selim Işık karakterini araştıran kişi kimdir?",
+          "options": [
+            "Turgut Özben",
+            "Hayri İrdal",
+            "Zebercet",
+            "C."
+          ],
+          "correctAnswer": "Turgut Özben"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Aşağıdaki eserlerden hangisi Franz Kafka'ya ait değildir?",
+          "options": [
+            "Dava",
+            "Şato",
+            "Dönüşüm",
+            "Bulantı"
+          ],
+          "correctAnswer": "Bulantı"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Saatleri Ayarlama Enstitüsü romanının başkarakteri kimdir?",
+          "options": [
+            "Mümtaz",
+            "Hayri İrdal",
+            "İhsan",
+            "Suat"
+          ],
+          "correctAnswer": "Hayri İrdal"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Aşağıdakilerden hangisi Servet-i Fünun dönemi sanatçılarından biridir?",
+          "options": [
+            "Namık Kemal",
+            "Halit Ziya Uşaklıgil",
+            "Ömer Seyfettin",
+            "Ziya Gökalp"
+          ],
+          "correctAnswer": "Halit Ziya Uşaklıgil"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Kürk Mantolu Madonna romanında Raif Efendi'nin âşık olduğu kişi kimdir?",
+          "options": [
+            "Macide",
+            "Maria Puder",
+            "Seniha",
+            "Nuran"
+          ],
+          "correctAnswer": "Maria Puder"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "İlahi Komedya hangi üç ana bölümden oluşur?",
+          "options": [
+            "Cehennem – Araf – Cennet",
+            "Araf – Cennet – Cehennem",
+            "Cennet – Dünya – Cehennem",
+            "Cehennem – Limbo – Cennet"
+          ],
+          "correctAnswer": "Cehennem – Araf – Cennet"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Aşağıdaki eserlerden hangisinin olayları ağırlıklı olarak Dublin'de geçer?",
+          "options": [
+            "Ulysses",
+            "Dava",
+            "Yabancı",
+            "Dorian Gray'in Portresi"
+          ],
+          "correctAnswer": "Ulysses"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Aylak Adam romanındaki başkarakter hangi harfle anılır?",
+          "options": [
+            "A.",
+            "C.",
+            "M.",
+            "Y."
+          ],
+          "correctAnswer": "C."
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Aşağıdakilerden hangisi bir tiyatro eseri değildir?",
+          "options": [
+            "Hamlet",
+            "Macbeth",
+            "Othello",
+            "Suç ve Ceza"
+          ],
+          "correctAnswer": "Suç ve Ceza"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Don Kişot romanında Don Kişot'un yoldaşının adı nedir?",
+          "options": [
+            "Sancho Panza",
+            "Mercutio",
+            "Pangloss",
+            "Gargantua"
+          ],
+          "correctAnswer": "Sancho Panza"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Aşağıdaki eşleştirmelerden hangisi yanlıştır?",
+          "options": [
+            "Kafka – Dava",
+            "Camus – Yabancı",
+            "Orwell – 1984",
+            "Dostoyevski – Anna Karenina"
+          ],
+          "correctAnswer": "Dostoyevski – Anna Karenina"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Mai ve Siyah romanının başkarakteri kimdir?",
+          "options": [
+            "Ahmet Cemil",
+            "Bihruz Bey",
+            "Felatun Bey",
+            "Ali Rıza Bey"
+          ],
+          "correctAnswer": "Ahmet Cemil"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Aşağıdaki eserlerden hangisi Türk edebiyatındaki ilk realist romanlardan biri olarak kabul edilir?",
+          "options": [
+            "İntibah",
+            "Araba Sevdası",
+            "Taaşşuk-ı Talat ve Fitnat",
+            "Eylül"
+          ],
+          "correctAnswer": "Araba Sevdası"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Bu sahnede Don Kişot yel değirmenlerini ne sanmaktadır?",
+          "options": [
+            "Şato",
+            "Dev",
+            "Ejderha",
+            "Asker"
+          ],
+          "correctAnswer": "Dev",
+          "imageDescription": "Don Kişot'un yel değirmenlerine saldırdığı klasik illüstrasyon"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Aşağıdaki eserlerden hangisi bu yazara ait değildir?",
+          "options": [
+            "Hayvan Çiftliği",
+            "Cesur Yeni Dünya",
+            "1984",
+            "Burma Günleri"
+          ],
+          "correctAnswer": "Cesur Yeni Dünya",
+          "imageDescription": "George Orwell'ın portresi"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu eserin temel amacı aşağıdakilerden hangisidir?",
+          "options": [
+            "Araplara Türkçe öğretmek",
+            "Farslara Arapça öğretmek",
+            "Türk tarihini kronolojik anlatmak",
+            "İslam hukukunu açıklamak"
+          ],
+          "correctAnswer": "Araplara Türkçe öğretmek",
+          "imageDescription": "Eski bir Divanü Lügati't-Türk yazması"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu roman Türk edebiyatında ağırlıklı olarak hangi anlatım anlayışıyla ilişkilendirilir?",
+          "options": [
+            "Toplumcu gerçekçilik",
+            "Modernist / postmodern anlatı",
+            "Millî romantizm",
+            "Natüralizm"
+          ],
+          "correctAnswer": "Modernist / postmodern anlatı",
+          "imageDescription": "Tutunamayanlar kitabının kapağı"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Eserde Dante'ye Cehennem ve Araf boyunca rehberlik eden kişi kimdir?",
+          "options": [
+            "Homeros",
+            "Vergilius",
+            "Petrarca",
+            "Boccaccio"
+          ],
+          "correctAnswer": "Vergilius",
+          "imageDescription": "Dante'nin İlahi Komedya'yı temsil eden Cehennem-Araf-Cennet çizimi"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Romanın merkezinde kurulan enstitünün temel işlevi nedir?",
+          "options": [
+            "Yeni saatler üretmek",
+            "Saatleri resmî zamana göre ayarlamak",
+            "Saat ustaları yetiştirmek",
+            "Tarihî saatleri müzede sergilemek"
+          ],
+          "correctAnswer": "Saatleri resmî zamana göre ayarlamak",
+          "imageDescription": "Saatleri Ayarlama Enstitüsü'nü çağrıştıran eski saatler ve saat mekanizmaları"
+        }
+      ]
+    },
+    {
+      "category": "Sinema ve Diziler",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Christopher Nolan'ın ilk uzun metraj filmi hangisidir?",
+          "options": [
+            "Memento",
+            "Following",
+            "Insomnia",
+            "The Prestige"
+          ],
+          "correctAnswer": "Following"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "The Godfather Part II'de genç Vito Corleone'yi kim oynar?",
+          "options": [
+            "Al Pacino",
+            "Robert De Niro",
+            "James Caan",
+            "Andy Garcia"
+          ],
+          "correctAnswer": "Robert De Niro"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Interstellar'da Cooper'ın kızının adı nedir?",
+          "options": [
+            "Amelia",
+            "Murphy",
+            "Jessica",
+            "Louise"
+          ],
+          "correctAnswer": "Murphy"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Saul Goodman'ın gerçek adı nedir?",
+          "options": [
+            "Chuck McGill",
+            "Jimmy McGill",
+            "Howard Hamlin",
+            "Gene Takavic"
+          ],
+          "correctAnswer": "Jimmy McGill"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Alien'daki Nostromo bilgisayarının takma adı nedir?",
+          "options": [
+            "Father",
+            "Mother",
+            "Bishop",
+            "HAL"
+          ],
+          "correctAnswer": "Mother"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Game of Thrones'taki Kızıl Düğün nerede gerçekleşir?",
+          "options": [
+            "Harrenhal",
+            "The Twins",
+            "Winterfell",
+            "Dragonstone"
+          ],
+          "correctAnswer": "The Twins"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "2001: A Space Odyssey'deki yapay zekânın adı nedir?",
+          "options": [
+            "HAL 8000",
+            "HAL 9000",
+            "HAL 9100",
+            "SAL 9000"
+          ],
+          "correctAnswer": "HAL 9000"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Blade Runner'da Rick Deckard'ı kim oynar?",
+          "options": [
+            "Rutger Hauer",
+            "Harrison Ford",
+            "Kurt Russell",
+            "Michael Douglas"
+          ],
+          "correctAnswer": "Harrison Ford"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Shawshank Redemption'da Andy'nin mesleği nedir?",
+          "options": [
+            "Avukat",
+            "Bankacı",
+            "Öğretmen",
+            "Muhasebeci"
+          ],
+          "correctAnswer": "Bankacı"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Star Wars'ta Darth Vader'ın doğum adı nedir?",
+          "options": [
+            "Ben Solo",
+            "Anakin Skywalker",
+            "Luke Skywalker",
+            "Galen Marek"
+          ],
+          "correctAnswer": "Anakin Skywalker"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "The Dark Knight'ta Harvey Dent hangi karaktere dönüşür?",
+          "options": [
+            "Riddler",
+            "Two-Face",
+            "Scarecrow",
+            "Black Mask"
+          ],
+          "correctAnswer": "Two-Face"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Spirited Away'in ana karakteri kimdir?",
+          "options": [
+            "San",
+            "Chihiro",
+            "Kiki",
+            "Sophie"
+          ],
+          "correctAnswer": "Chihiro"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "The Truman Show'daki kasabanın adı nedir?",
+          "options": [
+            "Pleasantville",
+            "Seahaven",
+            "Sunnydale",
+            "Hill Valley"
+          ],
+          "correctAnswer": "Seahaven"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Parasite filminin yönetmeni kimdir?",
+          "options": [
+            "Park Chan-wook",
+            "Bong Joon-ho",
+            "Kim Jee-woon",
+            "Lee Chang-dong"
+          ],
+          "correctAnswer": "Bong Joon-ho"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Neo'ya bu seçimi kim sunar?",
+          "options": [
+            "Cypher",
+            "Morpheus",
+            "Trinity",
+            "Tank"
+          ],
+          "correctAnswer": "Morpheus",
+          "imageDescription": "Matrix'teki kırmızı ve mavi hap sahnesi"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Yüzük hangi yerde yok edilir?",
+          "options": [
+            "Erebor",
+            "Doom Dağı",
+            "Moria",
+            "Isengard"
+          ],
+          "correctAnswer": "Doom Dağı",
+          "imageDescription": "Yüzüklerin Efendisi'ndeki Tek Yüzük"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu karakter hangi filmde bu oyuncu tarafından canlandırılmıştır?",
+          "options": [
+            "Batman Begins",
+            "The Dark Knight",
+            "The Dark Knight Rises",
+            "Joker"
+          ],
+          "correctAnswer": "The Dark Knight",
+          "imageDescription": "Heath Ledger'ın Joker karakteri"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu aracın en çok ilişkilendirildiği karakter hangisidir?",
+          "options": [
+            "Luke Skywalker",
+            "Han Solo",
+            "Obi-Wan Kenobi",
+            "Boba Fett"
+          ],
+          "correctAnswer": "Han Solo",
+          "imageDescription": "Star Wars Millennium Falcon"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Bu robot hangi filmde yer alır?",
+          "options": [
+            "Gravity",
+            "Interstellar",
+            "Arrival",
+            "The Martian"
+          ],
+          "correctAnswer": "Interstellar",
+          "imageDescription": "TARS robotu"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Karakteri The Silence of the Lambs filminde kim canlandırır?",
+          "options": [
+            "Mads Mikkelsen",
+            "Anthony Hopkins",
+            "Brian Cox",
+            "Jack Nicholson"
+          ],
+          "correctAnswer": "Anthony Hopkins",
+          "imageDescription": "Hannibal Lecter'ın maske taktığı sahne"
+        }
+      ]
+    },
+    {
+      "category": "Müzik",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "The Dark Side of the Moon hangi yıl yayımlandı?",
+          "options": [
+            "1972",
+            "1973",
+            "1974",
+            "1975"
+          ],
+          "correctAnswer": "1973"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Freddie Mercury'nin doğum adı nedir?",
+          "options": [
+            "Frederick Bulsara",
+            "Farrokh Bulsara",
+            "Farhad Bulsara",
+            "Frederick Mercury"
+          ],
+          "correctAnswer": "Farrokh Bulsara"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Metallica'nın ilk albümü hangisidir?",
+          "options": [
+            "Ride the Lightning",
+            "Kill 'Em All",
+            "Master of Puppets",
+            "Justice for All"
+          ],
+          "correctAnswer": "Kill 'Em All"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Nevermind albümünün yapımcısı kimdir?",
+          "options": [
+            "Steve Albini",
+            "Butch Vig",
+            "Rick Rubin",
+            "Bob Rock"
+          ],
+          "correctAnswer": "Butch Vig"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Beatles'ın son kaydedilen stüdyo albümü hangisidir?",
+          "options": [
+            "Let It Be",
+            "Abbey Road",
+            "Revolver",
+            "White Album"
+          ],
+          "correctAnswer": "Abbey Road"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Stairway to Heaven hangi albümde bulunur?",
+          "options": [
+            "Led Zeppelin III",
+            "Led Zeppelin IV",
+            "Houses of the Holy",
+            "Physical Graffiti"
+          ],
+          "correctAnswer": "Led Zeppelin IV"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Black Sabbath'ın ilk albümü hangi yıl çıktı?",
+          "options": [
+            "1969",
+            "1970",
+            "1971",
+            "1972"
+          ],
+          "correctAnswer": "1970"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Linkin Park'ın ilk stüdyo albümü hangisidir?",
+          "options": [
+            "Meteora",
+            "Hybrid Theory",
+            "Reanimation",
+            "Minutes to Midnight"
+          ],
+          "correctAnswer": "Hybrid Theory"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Bohemian Rhapsody hangi albümdedir?",
+          "options": [
+            "Queen II",
+            "A Night at the Opera",
+            "News of the World",
+            "Jazz"
+          ],
+          "correctAnswer": "A Night at the Opera"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Thriller'ın yapımcılığında önemli rol oynayan kişi kimdir?",
+          "options": [
+            "Phil Spector",
+            "Quincy Jones",
+            "Nile Rodgers",
+            "George Martin"
+          ],
+          "correctAnswer": "Quincy Jones"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Guns N' Roses'ın ilk albümü hangisidir?",
+          "options": [
+            "G N' R Lies",
+            "Appetite for Destruction",
+            "Use Your Illusion I",
+            "Chinese Democracy"
+          ],
+          "correctAnswer": "Appetite for Destruction"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Beethoven'ın Ay Işığı Sonatı kaç numaralı piyano sonatıdır?",
+          "options": [
+            "8",
+            "14",
+            "17",
+            "21"
+          ],
+          "correctAnswer": "14"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Mozart'ın Requiem'ini ölümünden sonra tamamlayan kişi kimdir?",
+          "options": [
+            "Salieri",
+            "Franz Xaver Süssmayr",
+            "Haydn",
+            "Hummel"
+          ],
+          "correctAnswer": "Franz Xaver Süssmayr"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "David Gilmour Pink Floyd'a hangi yıl katılmıştır?",
+          "options": [
+            "1966",
+            "1967",
+            "1968",
+            "1969"
+          ],
+          "correctAnswer": "1967"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Bu albüm hangi gruba aittir?",
+          "options": [
+            "Genesis",
+            "Pink Floyd",
+            "Yes",
+            "King Crimson"
+          ],
+          "correctAnswer": "Pink Floyd",
+          "imageDescription": "Pink Floyd Dark Side of the Moon prizma kapağı"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Bu sanatçı hangi grubun solistidir?",
+          "options": [
+            "The Who",
+            "Queen",
+            "Journey",
+            "Led Zeppelin"
+          ],
+          "correctAnswer": "Queen",
+          "imageDescription": "Freddie Mercury Wembley konserinden fotoğraf"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu gitar modeliyle özellikle özdeşleşmiş AC/DC gitaristi kimdir?",
+          "options": [
+            "Malcolm Young",
+            "Angus Young",
+            "Slash",
+            "Jimmy Page"
+          ],
+          "correctAnswer": "Angus Young",
+          "imageDescription": "Gibson SG gitar"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu albümün çıkış yılı hangisidir?",
+          "options": [
+            "1989",
+            "1991",
+            "1993",
+            "1994"
+          ],
+          "correctAnswer": "1991",
+          "imageDescription": "Nirvana Nevermind albüm kapağı"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Bu maskot hangi grupla ilişkilidir?",
+          "options": [
+            "Judas Priest",
+            "Iron Maiden",
+            "Megadeth",
+            "Motörhead"
+          ],
+          "correctAnswer": "Iron Maiden",
+          "imageDescription": "Iron Maiden maskotu Eddie"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Bu gitarist en çok hangi grupla tanınır?",
+          "options": [
+            "Aerosmith",
+            "Guns N' Roses",
+            "Bon Jovi",
+            "Mötley Crüe"
+          ],
+          "correctAnswer": "Guns N' Roses",
+          "imageDescription": "Slash'ın silindir şapkalı konser fotoğrafı"
+        }
+      ]
+    },
+    {
+      "category": "Teknoloji ve Yazılım",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "TCP/IP modelinde HTTP hangi katmandadır?",
+          "options": [
+            "Taşıma",
+            "Uygulama",
+            "İnternet",
+            "Ağ erişim"
+          ],
+          "correctAnswer": "Uygulama"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "IPv6 adresleri kaç bittir?",
+          "options": [
+            "64",
+            "128",
+            "256",
+            "512"
+          ],
+          "correctAnswer": "128"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "HTTPS standart olarak hangi portu kullanır?",
+          "options": [
+            "80",
+            "443",
+            "8080",
+            "8443"
+          ],
+          "correctAnswer": "443"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "DNS'in standart portu hangisidir?",
+          "options": [
+            "25",
+            "53",
+            "67",
+            "110"
+          ],
+          "correctAnswer": "53"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Git'te commit geçmişini görüntüleyen komut hangisidir?",
+          "options": [
+            "git status",
+            "git log",
+            "git history",
+            "git commits"
+          ],
+          "correctAnswer": "git log"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "SQL'de yalnızca eşleşen satırları birleştiren yapı hangisidir?",
+          "options": [
+            "LEFT JOIN",
+            "INNER JOIN",
+            "FULL JOIN",
+            "CROSS JOIN"
+          ],
+          "correctAnswer": "INNER JOIN"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "C dilinde bir değişkenin adresini almak için hangi operatör kullanılır?",
+          "options": [
+            "*",
+            "&",
+            "%",
+            "@"
+          ],
+          "correctAnswer": "&"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "C#'ta kalıtım hangi sembolle belirtilir?",
+          "options": [
+            "->",
+            ":",
+            "=>",
+            "::"
+          ],
+          "correctAnswer": ":"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Aşağıdakilerden hangisi ACID özelliği değildir?",
+          "options": [
+            "Atomicity",
+            "Distribution",
+            "Consistency",
+            "Isolation"
+          ],
+          "correctAnswer": "Distribution"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "HTTP 403 ne anlama gelir?",
+          "options": [
+            "Unauthorized",
+            "Forbidden",
+            "Not Found",
+            "Bad Request"
+          ],
+          "correctAnswer": "Forbidden"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "SHA-256 çıktısı kaç bittir?",
+          "options": [
+            "128",
+            "256",
+            "512",
+            "1024"
+          ],
+          "correctAnswer": "256"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Hangisi ilişkisel veritabanı değildir?",
+          "options": [
+            "PostgreSQL",
+            "MongoDB",
+            "MySQL",
+            "SQL Server"
+          ],
+          "correctAnswer": "MongoDB"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Binary search'ün zaman karmaşıklığı nedir?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(n log n)",
+            "O(n²)"
+          ],
+          "correctAnswer": "O(log n)"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Bir tabloyu koruyup satırlarını hızlı şekilde temizlemek için hangisi kullanılabilir?",
+          "options": [
+            "DROP TABLE",
+            "TRUNCATE TABLE",
+            "DELETE DATABASE",
+            "CLEAR TABLE"
+          ],
+          "correctAnswer": "TRUNCATE TABLE"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Bu konnektör en çok hangi bağlantıyla ilişkilidir?",
+          "options": [
+            "HDMI",
+            "Ethernet",
+            "USB",
+            "SATA"
+          ],
+          "correctAnswer": "Ethernet",
+          "imageDescription": "RJ45 konnektörü"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Görseldeki bağlantı türü hangisidir?",
+          "options": [
+            "Micro-USB",
+            "USB Type-C",
+            "Mini-USB",
+            "Thunderbolt 1"
+          ],
+          "correctAnswer": "USB Type-C",
+          "imageDescription": "USB Type-C portu"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu yuvalara hangi donanım takılır?",
+          "options": [
+            "SSD",
+            "RAM",
+            "CPU",
+            "GPU"
+          ],
+          "correctAnswer": "RAM",
+          "imageDescription": "Anakart üzerindeki RAM yuvaları"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu yapı hangi tür kontrol yapısıdır?",
+          "options": [
+            "Koşul",
+            "Döngü",
+            "Fonksiyon",
+            "Sınıf"
+          ],
+          "correctAnswer": "Döngü",
+          "imageDescription": "Kod ekranında `for(int i=0;i<10;i++)`"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Merkezde bir cihaz bulunan bu ağ topolojisinin adı nedir?",
+          "options": [
+            "Bus",
+            "Star",
+            "Ring",
+            "Mesh"
+          ],
+          "correctAnswer": "Star",
+          "imageDescription": "Yıldız topolojili ağ şeması"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Bu platform en çok hangi sistemle birlikte kullanılır?",
+          "options": [
+            "SVN",
+            "Git",
+            "FTP",
+            "Telnet"
+          ],
+          "correctAnswer": "Git",
+          "imageDescription": "GitHub'ın Octocat logosu"
+        }
+      ]
+    },
+    {
+      "category": "Spor",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Futbolda penaltı noktası kale çizgisinden kaç yard uzaktadır?",
+          "options": [
+            "11",
+            "12",
+            "13",
+            "14"
+          ],
+          "correctAnswer": "12"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Roland Garros hangi zeminde oynanır?",
+          "options": [
+            "Çim",
+            "Toprak",
+            "Sert kort",
+            "Halı"
+          ],
+          "correctAnswer": "Toprak"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Grand Slam erkekler tekler maçında galibiyet için kaç set kazanmak gerekir?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": "3"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "NBA üç sayı çizgisinin en uzak kısmı yaklaşık kaç metredir?",
+          "options": [
+            "6,75",
+            "7,24",
+            "7,50",
+            "8,00"
+          ],
+          "correctAnswer": "7,24"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Satrançta rok hangi iki taşla yapılır?",
+          "options": [
+            "Şah ve vezir",
+            "Şah ve kale",
+            "Kale ve fil",
+            "Şah ve fil"
+          ],
+          "correctAnswer": "Şah ve kale"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Bir piyon hangi taşa terfi edemez?",
+          "options": [
+            "Vezir",
+            "Şah",
+            "Kale",
+            "At"
+          ],
+          "correctAnswer": "Şah"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Formula 1'de pole position nedir?",
+          "options": [
+            "En hızlı tur",
+            "İlk sıradan başlama hakkı",
+            "Yarış liderliği",
+            "Pit alanı avantajı"
+          ],
+          "correctAnswer": "İlk sıradan başlama hakkı"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "DRS'nin açılımı hangisidir?",
+          "options": [
+            "Driver Racing System",
+            "Drag Reduction System",
+            "Dynamic Racing Setup",
+            "Downforce Reduction Setup"
+          ],
+          "correctAnswer": "Drag Reduction System"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Snooker'da siyah top kaç puandır?",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "correctAnswer": "7"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Snooker'da standart maksimum seri kaçtır?",
+          "options": [
+            "145",
+            "147",
+            "155",
+            "157"
+          ],
+          "correctAnswer": "147"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "Badmintonda normal bir set kaç puanda kazanılır?",
+          "options": [
+            "15",
+            "21",
+            "25",
+            "30"
+          ],
+          "correctAnswer": "21"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "Maratonun resmi uzunluğu nedir?",
+          "options": [
+            "41,195 km",
+            "42,195 km",
+            "42,500 km",
+            "43,195 km"
+          ],
+          "correctAnswer": "42,195 km"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "Beyzbolda savunmada sahada kaç oyuncu vardır?",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correctAnswer": "9"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Buz hokeyinde kaleci dahil buz üzerinde bir takımda kaç oyuncu vardır?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctAnswer": "6"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Bu turnuvada hangi zemin kullanılır?",
+          "options": [
+            "Toprak",
+            "Çim",
+            "Sert kort",
+            "Sentetik"
+          ],
+          "correctAnswer": "Çim",
+          "imageDescription": "Wimbledon merkez kortu"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Bu forma hangi bisikletçiye verilir?",
+          "options": [
+            "Sprint klasmanı liderine",
+            "Genel klasman liderine",
+            "En iyi genç sporcuya",
+            "Dağ klasmanı liderine"
+          ],
+          "correctAnswer": "Genel klasman liderine",
+          "imageDescription": "Sarı Tour de France forması"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu bayrak neyi belirtir?",
+          "options": [
+            "Güvenlik aracı",
+            "Yarışın bitişi",
+            "Tehlike",
+            "Diskalifiye"
+          ],
+          "correctAnswer": "Yarışın bitişi",
+          "imageDescription": "Formula 1 damalı bayrağı"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu noktadan hangi vuruş yapılır?",
+          "options": [
+            "Serbest vuruş",
+            "Penaltı",
+            "Korner",
+            "Kale vuruşu"
+          ],
+          "correctAnswer": "Penaltı",
+          "imageDescription": "Futbol sahasında 11 metre noktası işaretli"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Bu hamlenin gerçekleşebilmesi için aşağıdakilerden hangisi şarttır?",
+          "options": [
+            "Vezirin hareket etmemiş olması",
+            "Şah ve ilgili kalenin daha önce hareket etmemiş olması",
+            "Rakip şahın şahta olması",
+            "Piyonlardan birinin terfi etmiş olması"
+          ],
+          "correctAnswer": "Şah ve ilgili kalenin daha önce hareket etmemiş olması",
+          "imageDescription": "Satranç tahtasında şah ve kalenin rok pozisyonu"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Olimpiyat sembolündeki beş halka genel olarak neyi temsil eder?",
+          "options": [
+            "Olimpiyatlara katılan beş kurucu ülkeyi",
+            "Dünyanın beş yerleşik kıtasının birlikteliğini",
+            "Olimpiyat Oyunları'nın beş temel spor dalını",
+            "Olimpiyatların düzenlendiği ilk beş şehri"
+          ],
+          "correctAnswer": "Dünyanın beş yerleşik kıtasının birlikteliğini",
+          "imageDescription": "Olimpiyat halkaları"
+        }
+      ]
+    },
+    {
+      "category": "Genel Kültür",
+      "questions": [
+        {
+          "id": 1,
+          "type": "text",
+          "question": "Güneş Sistemi'nin en büyük uydusu hangisidir?",
+          "options": [
+            "Titan",
+            "Ganymede",
+            "Callisto",
+            "Triton"
+          ],
+          "correctAnswer": "Ganymede"
+        },
+        {
+          "id": 2,
+          "type": "text",
+          "question": "Uranüs'ü kim keşfetmiştir?",
+          "options": [
+            "Edmond Halley",
+            "William Herschel",
+            "Galileo",
+            "Kepler"
+          ],
+          "correctAnswer": "William Herschel"
+        },
+        {
+          "id": 3,
+          "type": "text",
+          "question": "Neptün'ün varlığını matematiksel olarak tahmin eden bilim insanlarından biri kimdir?",
+          "options": [
+            "Hubble",
+            "Urbain Le Verrier",
+            "Cassini",
+            "Brahe"
+          ],
+          "correctAnswer": "Urbain Le Verrier"
+        },
+        {
+          "id": 4,
+          "type": "text",
+          "question": "Dünya kabuğundaki en bol element hangisidir?",
+          "options": [
+            "Silisyum",
+            "Oksijen",
+            "Demir",
+            "Alüminyum"
+          ],
+          "correctAnswer": "Oksijen"
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "question": "Esperanto'nun yaratıcısı kimdir?",
+          "options": [
+            "Saussure",
+            "L. L. Zamenhof",
+            "Chomsky",
+            "Tolkien"
+          ],
+          "correctAnswer": "L. L. Zamenhof"
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "question": "Sputnik 1 hangi yıl fırlatılmıştır?",
+          "options": [
+            "1955",
+            "1957",
+            "1959",
+            "1961"
+          ],
+          "correctAnswer": "1957"
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "question": "Nobel Ödülleri ilk kez hangi yıl verilmiştir?",
+          "options": [
+            "1899",
+            "1901",
+            "1903",
+            "1905"
+          ],
+          "correctAnswer": "1901"
+        },
+        {
+          "id": 8,
+          "type": "text",
+          "question": "Nobel'in vasiyetinde başlangıçta kaç ödül alanı vardı?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correctAnswer": "5"
+        },
+        {
+          "id": 9,
+          "type": "text",
+          "question": "Standart iskambil destesindeki resimli kart sayısı kaçtır?",
+          "options": [
+            "10",
+            "12",
+            "14",
+            "16"
+          ],
+          "correctAnswer": "12"
+        },
+        {
+          "id": 10,
+          "type": "text",
+          "question": "Satrançta başlangıçta toplam kaç piyon vardır?",
+          "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "correctAnswer": "16"
+        },
+        {
+          "id": 11,
+          "type": "text",
+          "question": "En passant hangi taş tarafından yapılabilir?",
+          "options": [
+            "At",
+            "Piyon",
+            "Fil",
+            "Kale"
+          ],
+          "correctAnswer": "Piyon"
+        },
+        {
+          "id": 12,
+          "type": "text",
+          "question": "SI'da ışık şiddeti birimi hangisidir?",
+          "options": [
+            "Lümen",
+            "Kandela",
+            "Lüks",
+            "Watt"
+          ],
+          "correctAnswer": "Kandela"
+        },
+        {
+          "id": 13,
+          "type": "text",
+          "question": "İnsan vücudunda kütle bakımından en fazla bulunan element hangisidir?",
+          "options": [
+            "Karbon",
+            "Oksijen",
+            "Hidrojen",
+            "Azot"
+          ],
+          "correctAnswer": "Oksijen"
+        },
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Antik Dünyanın Yedi Harikası'ndan büyük ölçüde ayakta kalan tek yapı hangisidir?",
+          "options": [
+            "Artemis Tapınağı",
+            "Keops Piramidi",
+            "Rodos Heykeli",
+            "İskenderiye Feneri"
+          ],
+          "correctAnswer": "Keops Piramidi"
+        },
+        {
+          "id": 15,
+          "type": "image",
+          "question": "Bu yapı hangi firavun için yaptırılmıştır?",
+          "options": [
+            "Kefren",
+            "Khufu (Keops)",
+            "Mikerinos",
+            "Tutankhamun"
+          ],
+          "correctAnswer": "Khufu (Keops)",
+          "imageDescription": "Keops Piramidi"
+        },
+        {
+          "id": 16,
+          "type": "image",
+          "question": "Bu tablonun ressamı kimdir?",
+          "options": [
+            "Michelangelo",
+            "Leonardo da Vinci",
+            "Raphael",
+            "Botticelli"
+          ],
+          "correctAnswer": "Leonardo da Vinci",
+          "imageDescription": "Mona Lisa"
+        },
+        {
+          "id": 17,
+          "type": "image",
+          "question": "Bu yapı hangi uluslararası etkinlik için inşa edilmiştir?",
+          "options": [
+            "1889 Olimpiyatları",
+            "1889 Dünya Fuarı",
+            "Fransız Devrimi'nin 50. yılı",
+            "1900 Dünya Fuarı"
+          ],
+          "correctAnswer": "1889 Dünya Fuarı",
+          "imageDescription": "Eyfel Kulesi"
+        },
+        {
+          "id": 18,
+          "type": "image",
+          "question": "Bu uyduyu hangi ülke fırlatmıştır?",
+          "options": [
+            "ABD",
+            "Sovyetler Birliği",
+            "Çin",
+            "Fransa"
+          ],
+          "correctAnswer": "Sovyetler Birliği",
+          "imageDescription": "Sputnik 1"
+        },
+        {
+          "id": 19,
+          "type": "image",
+          "question": "Bu roket en çok hangi programla ilişkilidir?",
+          "options": [
+            "Gemini",
+            "Apollo",
+            "Mercury",
+            "Voyager"
+          ],
+          "correctAnswer": "Apollo",
+          "imageDescription": "Saturn V roketi"
+        },
+        {
+          "id": 20,
+          "type": "image",
+          "question": "Bu eserin ressamı kimdir?",
+          "options": [
+            "Claude Monet",
+            "Vincent van Gogh",
+            "Paul Cézanne",
+            "Edvard Munch"
+          ],
+          "correctAnswer": "Vincent van Gogh",
+          "imageDescription": "Vincent van Gogh'un Yıldızlı Gece tablosu"
+        }
+      ]
+    }
+  ]
+}
