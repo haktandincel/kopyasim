@@ -13,10 +13,16 @@ public class ExamPages : MonoBehaviour
 public float letterStep = 0.008f;
 public float maxWritingDistance = 0.3f;
 
+public GameObject AdiSoyadi;
+
+public bool HasStarted => !introOpen && selectedAnswers != null;
+
+private float nextNameFocusTime;
+
 
 public float writingMoveSpeed = 0.15f;
 
-public Vector3 namePencilStart = new Vector3(-0.085f, 1.0613f, -0.9381f);
+public Vector3 namePencilStart = new Vector3(0.370999992f,1.05980003f,-0.485700011f);
 
 
 public Vector3 letterOffset = new Vector3(
@@ -113,6 +119,37 @@ private bool[] previousControlStates;
     public bool IsFinished => examFinished;
 
 
+    private void LateUpdate()
+{
+    if (!introOpen || nameSubmitted || nameInput == null)
+        return;
+
+    if (!Application.isFocused || !nameInput.gameObject.activeInHierarchy)
+        return;
+
+    if (nameInput.isFocused)
+        return;
+
+    // Time.timeScale = 0 iken de çalışır.
+    if (Time.unscaledTime < nextNameFocusTime)
+        return;
+
+    nextNameFocusTime = Time.unscaledTime + 0.1f;
+
+    if (EventSystem.current == null)
+    {
+        Debug.LogError("Sahnede aktif EventSystem yok.", this);
+        return;
+    }
+
+    nameInput.enabled = true;
+    nameInput.interactable = true;
+    nameInput.readOnly = false;
+
+    EventSystem.current.SetSelectedGameObject(nameInput.gameObject);
+    nameInput.ActivateInputField();
+}
+
     private void ShowIntroPage()
 {
     introOpen = true;
@@ -167,19 +204,42 @@ optionDText.text = "↓ Başla";
     Cursor.lockState = CursorLockMode.None;
     Cursor.visible = true;
 
-    StartCoroutine(FocusNameInput());
-}
+    FocusNameAgain();}
 
 private IEnumerator FocusNameInput()
 {
-    // UI hazır olunca yazı alanına odaklan.
+    // Diğer başlangıç işlemleri tamamlansın.
     yield return null;
 
-    if (!introOpen || nameSubmitted)
+    if (!introOpen || nameSubmitted || nameInput == null)
         yield break;
 
-    nameInput.Select();
+    if (EventSystem.current == null)
+    {
+        Debug.LogError("Sahneye UI > Event System ekle.", this);
+        yield break;
+    }
+
+    nameInput.gameObject.SetActive(true);
+    nameInput.enabled = true;
+    nameInput.interactable = true;
+    nameInput.readOnly = false;
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+
+    EventSystem.current.SetSelectedGameObject(null);
+    EventSystem.current.SetSelectedGameObject(nameInput.gameObject);
+
     nameInput.ActivateInputField();
+
+    yield return null;
+
+    if (introOpen && !nameSubmitted)
+    {
+        nameInput.caretPosition = nameInput.text.Length;
+        nameInput.ForceLabelUpdate();
+    }
 }
 
 private void OnNameSubmitted(string value)
@@ -213,10 +273,7 @@ private void OnNameSubmitted(string value)
 
 
 private void UpdateWritingPencil()
-{
-    if (namePencilStart == null || pencil == null)
-        return;
-
+{    
     Vector3 targetPosition =
         namePencilStart +
         letterOffset * nameInput.text.Length;
@@ -240,7 +297,8 @@ private void FocusNameAgain()
     optionDText.text = "↓ Başla";
 
     pencil.SetActive(true);
-    pencil.transform.position = new Vector3(-0.0850000009f,1.06130004f,-0.93809998f);
+    pencil.transform.position = new Vector3(0.401800007f,1.06309998f,-0.482300013f);
+    
     pencil.transform.rotation = Quaternion.Euler(-50.3f,178.336f,-122.212f);
 
     StartCoroutine(FocusNameInput());
@@ -285,7 +343,7 @@ private void BeginExam()
 
     if (string.IsNullOrWhiteSpace(nameInput.text))
     {
-        questionText.text = "Lütfen adını soyadını yaz.";
+        questionText.text = "";
         FocusNameAgain();
         return;
     }
@@ -294,6 +352,10 @@ private void BeginExam()
 
     // Buradan sonra mevcut kodun devam etsin:
     introOpen = false;
+
+    AdiSoyadi.SetActive(false);
+
+    
 
     nameInput.onSubmit.RemoveListener(OnNameSubmitted);
     nameInput.DeactivateInputField();
@@ -373,6 +435,21 @@ ShowIntroPage();
 
     private void Update()
     {
+
+        if (examFinished)
+{
+    if (Input.GetKeyDown(KeyCode.R))
+    {
+        Time.timeScale = 1f;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager
+                .GetActiveScene().buildIndex
+        );
+    }
+
+    return;
+}
 
         if (introOpen)
 {
@@ -458,19 +535,19 @@ ShowIntroPage();
         switch (option)
         {
             case 'A':
-                position = new Vector3(-0.06f, 1.11f, -0.57f);
+                position = new Vector3(0.442999989f,1.06299996f,-0.158999994f);
                 break;
 
             case 'B':
-                position = new Vector3(-0.23f, 1.11f, -0.57f);
+                position = new Vector3(0.290199995f,1.05830002f,-0.169200003f);
                 break;
 
             case 'C':
-                position = new Vector3(-0.06f, 1.11f, -0.52f);
+                position = new Vector3(0.470499992f,1.06359994f,-0.079400003f);
                 break;
 
             case 'D':
-                position = new Vector3(-0.23f, 1.11f, -0.49f);
+                position = new Vector3(0.292899996f,1.06500006f,-0.0703999996f);
                 break;
 
             default:
@@ -544,7 +621,7 @@ ShowIntroPage();
         Question q = questions[currentPage];
 
         questionText.text =
-            $"Soru {currentPage + 1}\n\n{q.question}";
+            $" {currentPage + 1}) {q.question}";
 
         optionAText.text = $"A) {q.optionA}";
         optionBText.text = $"B) {q.optionB}";
@@ -633,7 +710,7 @@ ShowIntroPage();
             correct * 100f / questions.Length
         );
 
-        questionText.text = "SINAV SONUCU";
+        questionText.text = "yeni oyun için R tuşuna bas";
 
         optionAText.text = $"Doğru: {correct}";
         optionBText.text = $"Yanlış: {wrong}";

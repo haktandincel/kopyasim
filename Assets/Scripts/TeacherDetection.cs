@@ -88,6 +88,20 @@ if (agent == null || teacherPatrol == null ||
             gameOverPanel.SetActive(false);
     }
 
+    private void Update()
+{
+    if (gameOver && Input.GetKeyDown(KeyCode.R))
+    {
+        Time.timeScale = 1f;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager
+                .GetActiveScene().buildIndex
+        );
+    }
+}
+
+
     private void LateUpdate()
     {
         if (gameOver)
@@ -286,7 +300,7 @@ private IEnumerator ApproachPlayer()
     {
         warningText.text = warningCount == 1
             ? "Önüne dön! Bir daha görmeyeyim.\nUyarı: 1 / 2"
-            : "Seni tekrar yakaladım! Sınavın bitti.";
+            : "Seni tekrar yakaladım! Sınavın bitti. Tekrar başlatmak için R tuşuna bas.";
 
         warningText.gameObject.SetActive(true);
         warningTimer = caughtAnimationDuration;
@@ -296,6 +310,7 @@ private IEnumerator ApproachPlayer()
 
     if (warningCount >= 2)
     {
+
         EndGame();
         yield break;
     }
@@ -355,6 +370,8 @@ private void AbortApproach()
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Debug.Log("İkinci kez yakalandın. Oyun bitti.");
+        Debug.Log("İkinci kez yakalandın. Oyun bitti. Tekrar başlatmak için R tuşuna bas.");
+        
+        
     }
 }
