@@ -1,11 +1,27 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.AI;
 
 public class TeacherDetection : MonoBehaviour
 {
     [Header("Referanslar")]
     public SeatedLean playerLean;
     public TeacherPatrol teacherPatrol;
+
+    public float approachSpeed = 4f;
+
+    public Animator animator;
+
+    [Header("Oyuncuya yaklaşma")]
+public Transform playerStandPoint;
+
+public float caughtAnimationDuration = 3f;
+public float turnSpeed = 180f;
+public float approachTimeout = 20f;
+
+private NavMeshAgent agent;
+private bool approachingPlayer;
 
     
 
@@ -36,8 +52,28 @@ public class TeacherDetection : MonoBehaviour
     private bool caughtThisLean;
     private bool gameOver;
 
+    public HitScreenEffect hitScreenEffect;
+
+// Animasyon Event'i bu metodu çağıracak.
+public void OnTeacherHit()
+{
+    if (hitScreenEffect != null)
+        hitScreenEffect.Flash();
+}
+
     private void Start()
     {
+
+        agent = GetComponent<NavMeshAgent>();
+
+if (agent == null || teacherPatrol == null ||
+    animator == null || playerStandPoint == null)
+{
+    Debug.LogError("Agent, Patrol, Animator ve durma noktasını bağla.", this);
+    enabled = false;
+    return;
+}
+
         if (playerLean == null || eyes == null || playerHead == null)
         {
             Debug.LogError("Hocanın görüş referanslarını bağla.", this);
@@ -58,6 +94,12 @@ public class TeacherDetection : MonoBehaviour
             return;
 
         UpdateWarning();
+
+
+        if (approachingPlayer)
+        {
+            return;
+        }
 
         // Merkeze dönünce yeni bir yakalanma mümkün olur.
         if (!playerLean.IsLeaning)
@@ -123,30 +165,161 @@ public class TeacherDetection : MonoBehaviour
     }
 
     private void CatchPlayer()
+{
+    if (approachingPlayer || gameOver)
+        return;
+
+    caughtThisLean = true;
+    seenTimer = 0f;
+    warningCount++;
+
+    approachingPlayer = true;
+    StartCoroutine(ApproachPlayer());
+}
+
+private IEnumerator ApproachPlayer()
+{
+    teacherPatrol.PausePatrol();
+    float normalSpeed = agent.speed;
+    agent.speed = approachSpeed;
+
+    if (!agent.isOnNavMesh)
     {
-        caughtThisLean = true;
-        seenTimer = 0f;
-        warningCount++;
-
-        if (warningCount == 1)
-        {
-            
-            Debug.Log("Hoca: Önüne dön! Bir daha görmeyeyim.");
-
-            if (warningText != null)
-            {
-                warningText.text =
-                    "Önüne dön! Bir daha görmeyeyim.\nUyarı: 1 / 2";
-
-                warningText.gameObject.SetActive(true);
-                warningTimer = 3f;
-            }
-        }
-        else
-        {
-            EndGame();
-        }
+        AbortApproach();
+        yield break;
     }
+
+    // Hedefin tamamen ulaşılabilir olduğundan emin ol.
+    NavMeshPath path = new NavMeshPath();
+
+    if (!agent.CalculatePath(playerStandPoint.position, path) ||
+        path.status != NavMeshPathStatus.PathComplete)
+    {
+        AbortApproach();
+        yield break;
+    }
+
+    agent.updateRotation = true;
+    agent.isStopped = false;
+
+    if (!agent.SetPath(path))
+    {
+        AbortApproach();
+        yield break;
+    }
+
+    // Agent'ın yolu güncellemesini bekle.
+    yield return null;
+
+    float travelTimer = 0f;
+
+    while (true)
+    {
+        if (!agent.isOnNavMesh)
+        {
+            AbortApproach();
+            yield break;
+        }
+
+        if (!agent.pathPending)
+        {
+            if (agent.pathStatus != NavMeshPathStatus.PathComplete)
+            {
+                AbortApproach();
+                yield break;
+            }
+
+            if (agent.remainingDistance <=
+                Mathf.Max(agent.stoppingDistance, 0.15f))
+                break;
+        }
+
+        travelTimer += Time.deltaTime;
+
+        if (travelTimer >= approachTimeout)
+        {
+            AbortApproach();
+            yield break;
+        }
+
+        yield return null;
+    }
+
+    // Yanına geldi: hareketi tamamen durdur.
+    agent.isStopped = true;
+    agent.ResetPath();
+    agent.velocity = Vector3.zero;
+    agent.updateRotation = false;
+
+    animator.SetBool("isWalking", false);
+
+    // Oyuncuya dön.
+    float turnTimer = 0f;
+
+    while (turnTimer < 2f)
+    {
+        Vector3 direction = playerHead.position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude < 0.001f)
+            break;
+
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation,
+            targetRotation,
+            turnSpeed * Time.deltaTime
+        );
+
+        if (Quaternion.Angle(transform.rotation, targetRotation) < 2f)
+            break;
+
+        turnTimer += Time.deltaTime;
+        yield return null;
+    }
+
+    // Animasyon yalnızca yanına geldikten sonra başlar.
+    animator.SetTrigger("CaughtPlayer");
+
+    if (warningText != null)
+    {
+        warningText.text = warningCount == 1
+            ? "Önüne dön! Bir daha görmeyeyim.\nUyarı: 1 / 2"
+            : "Seni tekrar yakaladım! Sınavın bitti.";
+
+        warningText.gameObject.SetActive(true);
+        warningTimer = caughtAnimationDuration;
+    }
+
+    yield return new WaitForSeconds(caughtAnimationDuration);
+
+    if (warningCount >= 2)
+    {
+        EndGame();
+        yield break;
+    }
+
+    agent.speed = normalSpeed;
+    teacherPatrol.ResumePatrol();
+    approachingPlayer = false;
+}
+
+private void AbortApproach()
+{
+    Debug.LogWarning(
+        "Hoca oyuncuya ulaşamadı. Durma noktasını ve NavMesh'i kontrol et.",
+        this
+    );
+
+    // Tamamlanmayan karşılaşmayı uyarı olarak sayma.
+    warningCount = Mathf.Max(0, warningCount - 1);
+
+    if (agent.isOnNavMesh)
+        teacherPatrol.ResumePatrol();
+
+    approachingPlayer = false;
+}
 
     private void UpdateWarning()
     {

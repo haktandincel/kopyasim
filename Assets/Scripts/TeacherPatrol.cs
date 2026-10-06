@@ -14,6 +14,27 @@ public class TeacherPatrol : MonoBehaviour
         public Transform lookTarget; // Öğrencinin bakılacak noktası
     }
 
+
+    private bool externallyPaused;
+
+public void PausePatrol()
+{
+    externallyPaused = true;
+
+    LowerHand();
+    StopMoving();
+
+    agent.updateRotation = true;
+}
+
+public void ResumePatrol()
+{
+    externallyPaused = false;
+
+    ScheduleNextRaise();
+    ChooseNextPoint();
+}
+
     private enum State
     {
         Patrol,
@@ -100,6 +121,10 @@ public class TeacherPatrol : MonoBehaviour
 
     private void Update()
     {
+
+        if (externallyPaused)
+    return;
+
         if (!agent.isOnNavMesh)
             return;
 

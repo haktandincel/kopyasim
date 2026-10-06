@@ -1,52 +1,69 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.EventSystems;
 
 public class ExamPages : MonoBehaviour
-{   
+{
+
+    [Header("İsim yazarken kalem")]
+
+public float letterStep = 0.008f;
+public float maxWritingDistance = 0.3f;
+
+
+public float writingMoveSpeed = 0.15f;
+
+public Vector3 namePencilStart = new Vector3(-0.085f, 1.0613f, -0.9381f);
+
+
+public Vector3 letterOffset = new Vector3(
+    -0.0135f,
+    -0.00075f,
+    -0.0013f
+);
+
+    [Header("Başlangıç kağıdı")]
+public TMP_InputField nameInput;
+
+// Buraya yalnızca FPS kamera ve SeatedLean scriptlerini bağla.
+public Behaviour[] controlsToDisableBeforeStart;
+
+public string PlayerName { get; private set; }
+
+private bool introOpen = true;
+private bool nameSubmitted;
+private int nameSubmittedFrame;
+private bool[] previousControlStates;
 
     [Serializable]
-public class JsonRoot
-{
-    public JsonCategory[] categories;
-}
+    public class JsonRoot
+    {
+        public JsonCategory[] categories;
+    }
 
-[Serializable]
-public class JsonCategory
-{
-    public string category;
-    public JsonQuestion[] questions;
-}
+    [Serializable]
+    public class JsonCategory
+    {
+        public string category;
+        public JsonQuestion[] questions;
+    }
 
-[Serializable]
-public class JsonQuestion
-{
-    public int id;
-    public string type;
-    public string question;
-    public string[] options;
-    public string correctAnswer;
-
-
-    
-}
-
-[Header("JSON soru havuzu")]
-public TextAsset questionsJson;
-
-[Min(1)]
-public int examQuestionCount = 10;
-
-
-
+    [Serializable]
+    public class JsonQuestion
+    {
+        public int id;
+        public string type;
+        public string question;
+        public string[] options;
+        public string correctAnswer;
+    }
 
     [Serializable]
     public class Question
     {
-
-        
-
         [TextArea(2, 6)]
         public string question;
 
@@ -55,11 +72,13 @@ public int examQuestionCount = 10;
         public string optionC;
         public string optionD;
 
-
         [Tooltip("0 = A, 1 = B, 2 = C, 3 = D")]
         [Range(0, 3)]
         public int correctAnswer;
     }
+
+    [Header("JSON soru havuzu")]
+    public TextAsset questionsJson;
 
     [Header("Kağıttaki yazılar")]
     public TMP_Text questionText;
@@ -67,178 +86,452 @@ public int examQuestionCount = 10;
     public TMP_Text optionBText;
     public TMP_Text optionCText;
     public TMP_Text optionDText;
-    public TMP_Text pageNumberText;
 
-    public char secilenSik = 'A';
-
+    [Header("İşaretler")]
     public GameObject yuvarlakA;
     public GameObject yuvarlakB;
     public GameObject yuvarlakC;
-
     public GameObject yuvarlakD;
 
-    public Question[] questions = new Question[10];
-
+    [Header("Kalem")]
     public GameObject pencil;
+    public char secilenSik = 'A';
+
+    [Header("Oyun başlangıcında seçilen sorular")]
+    public Question[] questions;
+
+    [Header("Sınav bitince kapatılacak scriptler")]
+    public Behaviour[] controlsToDisableOnFinish;
 
     private int currentPage;
     private int[] selectedAnswers;
 
+    private bool confirmationOpen;
+    private bool examFinished;
+
     public int CurrentPage => currentPage;
+    public bool IsFinished => examFinished;
 
-    private void Start()
+
+    private void ShowIntroPage()
 {
-    if (!LoadRandomQuestions())
+    introOpen = true;
+    nameSubmitted = false;
+    PlayerName = "";
+
+    // Hoca, animasyonlar ve oyun zamanı beklesin.
+    Time.timeScale = 0f;
+
+    // Fareyle bakışı ve uzanmayı da kapat.
+    if (controlsToDisableBeforeStart != null)
     {
-        Debug.LogError("Sorular JSON'dan yüklenemedi.", this);
-        enabled = false;
+        previousControlStates =
+            new bool[controlsToDisableBeforeStart.Length];
+
+        for (int i = 0; i < controlsToDisableBeforeStart.Length; i++)
+        {
+            Behaviour control = controlsToDisableBeforeStart[i];
+
+            if (control == null || control == this)
+                continue;
+
+            previousControlStates[i] = control.enabled;
+            control.enabled = false;
+        }
+    }
+
+    questionText.text = "";
+
+    optionAText.text = "A) Başla";
+    optionBText.text = "";
+    optionCText.text = "Adını soyadını yaz";
+optionDText.text = "↓ Başla";
+
+    HideCircles();
+    pencil.SetActive(true);
+
+
+
+    nameInput.gameObject.SetActive(true);
+    nameInput.interactable = true;
+    nameInput.readOnly = false;
+    nameInput.contentType = TMP_InputField.ContentType.Standard;
+    nameInput.lineType = TMP_InputField.LineType.SingleLine;
+    nameInput.characterLimit = 40;
+    nameInput.richText = false;
+    nameInput.textComponent.richText = false;
+    nameInput.SetTextWithoutNotify("");
+
+    nameInput.onSubmit.AddListener(OnNameSubmitted);
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+
+    StartCoroutine(FocusNameInput());
+}
+
+private IEnumerator FocusNameInput()
+{
+    // UI hazır olunca yazı alanına odaklan.
+    yield return null;
+
+    if (!introOpen || nameSubmitted)
+        yield break;
+
+    nameInput.Select();
+    nameInput.ActivateInputField();
+}
+
+private void OnNameSubmitted(string value)
+{
+    if (!introOpen || nameSubmitted)
+        return;
+
+    PlayerName = value;
+
+    // Kalem Başla seçeneğine geçiyor.
+    nameSubmitted = true;
+    nameSubmittedFrame = Time.frameCount;
+
+    nameInput.readOnly = true;
+    nameInput.DeactivateInputField();
+    nameInput.interactable = false;
+
+    if (EventSystem.current != null)
+        EventSystem.current.SetSelectedGameObject(null);
+
+    questionText.text = "";
+
+    optionAText.text = "A) Başla";
+    optionBText.text = "";
+    optionCText.text = "Enter: Başla";
+    optionDText.text = "↑ Ad soyad";
+
+    pencil.SetActive(true);
+    SetFocusedOption('A');
+}
+
+
+private void UpdateWritingPencil()
+{
+    if (namePencilStart == null || pencil == null)
+        return;
+
+    Vector3 targetPosition =
+        namePencilStart +
+        letterOffset * nameInput.text.Length;
+
+    pencil.transform.position = Vector3.MoveTowards(
+        pencil.transform.position,
+        targetPosition,
+        writingMoveSpeed * Time.unscaledDeltaTime
+    );
+
+}
+
+private void FocusNameAgain()
+{
+    nameSubmitted = false;
+
+    nameInput.interactable = true;
+    nameInput.readOnly = false;
+
+    optionCText.text = "Adını soyadını yaz";
+    optionDText.text = "↓ Başla";
+
+    pencil.SetActive(true);
+    pencil.transform.position = new Vector3(-0.0850000009f,1.06130004f,-0.93809998f);
+    pencil.transform.rotation = Quaternion.Euler(-50.3f,178.336f,-122.212f);
+
+    StartCoroutine(FocusNameInput());
+}
+
+private void HandleIntroInput()
+{
+    // Ad soyad alanındayız.
+    if (!nameSubmitted)
+    {
+        UpdateWritingPencil();
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+            OnNameSubmitted(nameInput.text);
+
         return;
     }
 
-    if (questionText == null ||
-        optionAText == null || optionBText == null ||
-        optionCText == null || optionDText == null ||
-        yuvarlakA == null || yuvarlakB == null ||
-        yuvarlakC == null || yuvarlakD == null)
+    // Alan değiştirilen karede Enter yeniden işlenmesin.
+    if (Time.frameCount <= nameSubmittedFrame)
+        return;
+
+    // Başla'dan tekrar ad soyad alanına dön.
+    if (Input.GetKeyDown(KeyCode.UpArrow) ||
+        Input.GetKeyDown(KeyCode.Q))
     {
-        Debug.LogError("Yazı veya yuvarlak referansları eksik.", this);
-        enabled = false;
+        FocusNameAgain();
         return;
     }
 
-    selectedAnswers = new int[questions.Length];
+    if (Input.GetKeyDown(KeyCode.Return) ||
+        Input.GetKeyDown(KeyCode.KeypadEnter))
+    {
+        BeginExam();
+    }
+}
 
-    for (int i = 0; i < selectedAnswers.Length; i++)
-        selectedAnswers[i] = -1;
+private void BeginExam()
+{
+   if (!introOpen || !nameSubmitted)
+        return;
+
+    if (string.IsNullOrWhiteSpace(nameInput.text))
+    {
+        questionText.text = "Lütfen adını soyadını yaz.";
+        FocusNameAgain();
+        return;
+    }
+
+    PlayerName = nameInput.text.Trim();
+
+    // Buradan sonra mevcut kodun devam etsin:
+    introOpen = false;
+
+    nameInput.onSubmit.RemoveListener(OnNameSubmitted);
+    nameInput.DeactivateInputField();
+
+    if (EventSystem.current != null)
+        EventSystem.current.SetSelectedGameObject(null);
+
+    nameInput.gameObject.SetActive(false);
 
     currentPage = 0;
-    secilenSik = 'A';
 
+    pencil.SetActive(true);
+    SetFocusedOption('A');
     RefreshPage();
 
-    Debug.Log($"{questions.Length} soru yüklendi.", this);
+    if (controlsToDisableBeforeStart != null &&
+        previousControlStates != null)
+    {
+        for (int i = 0; i < controlsToDisableBeforeStart.Length; i++)
+        {
+            Behaviour control = controlsToDisableBeforeStart[i];
+
+            if (control != null && control != this)
+                control.enabled = previousControlStates[i];
+        }
+    }
+
+    Time.timeScale = 1f;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
 }
+
+    private void Start()
+    {
+        if (questionText == null ||
+            optionAText == null || optionBText == null ||
+            optionCText == null || optionDText == null ||
+            yuvarlakA == null || yuvarlakB == null ||
+            yuvarlakC == null || yuvarlakD == null ||
+            pencil == null)
+        {
+            Debug.LogError(
+                "Yazı, yuvarlak veya kalem referansları eksik.",
+                this
+            );
+
+            enabled = false;
+            return;
+        }
+
+        if (!LoadRandomQuestions())
+        {
+            enabled = false;
+            return;
+        }
+
+        selectedAnswers = new int[questions.Length];
+
+        for (int i = 0; i < selectedAnswers.Length; i++)
+            selectedAnswers[i] = -1;
+
+        currentPage = 0;
+        confirmationOpen = false;
+        examFinished = false;
+
+        
+        if (nameInput == null)
+{
+    Debug.LogError("Name Input alanını bağla.", this);
+    enabled = false;
+    return;
+}
+
+ShowIntroPage();
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            NextPage();
-        else if (Input.GetKeyDown(KeyCode.Q))
-            PreviousPage();
 
+        if (introOpen)
+{
+    HandleIntroInput();
+    return;
+}
+
+        if (examFinished || Time.timeScale == 0f)
+            return;
+
+        if (confirmationOpen)
+        {
+            HandleFinishInput();
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            NextPage();
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PreviousPage();
+            return;
+        }
+
+        HandleOptionMovement();
+
+        if (Input.GetKeyDown(KeyCode.Return) ||
+            Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            SelectAnswer(secilenSik - 'A');
+        }
+    }
+
+    private void HandleOptionMovement()
+    {
+        // Şık düzeni:
+        // A    B
+        // C    D
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (secilenSik == 'B')
-            {
-                secilenSik = 'A';
-                pencil.transform.position = new Vector3(-0.0599999987f,1.11000001f,-0.569999993f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-            }
+                SetFocusedOption('A');
             else if (secilenSik == 'D')
-            {
-                secilenSik = 'C';
-                pencil.transform.position = new Vector3(-0.0599999987f,1.11000001f,-0.519999981f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-
-            }           
+                SetFocusedOption('C');
         }
-        
-            
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (secilenSik == 'A')
-            {
-                secilenSik = 'B';
-                pencil.transform.position = new Vector3(-0.230000004f,1.11000001f,-0.569999993f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-
-            }
-            
+                SetFocusedOption('B');
             else if (secilenSik == 'C')
-            {
-                secilenSik = 'D';
-                pencil.transform.position = new Vector3(-0.230000004f,1.11000001f,-0.49000001f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-            }           
+                SetFocusedOption('D');
         }
-            
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (secilenSik == 'C')
-            {
-                secilenSik = 'A';
-                pencil.transform.position = new Vector3(-0.0599999987f,1.11000001f,-0.569999993f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-
-            }
+                SetFocusedOption('A');
             else if (secilenSik == 'D')
-            {
-                secilenSik = 'B';
-                pencil.transform.position = new Vector3(-0.230000004f,1.11000001f,-0.569999993f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-
-            }
-        }       
+                SetFocusedOption('B');
+        }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (secilenSik == 'A')
-            {
-                secilenSik = 'C';
-                pencil.transform.position = new Vector3(-0.0599999987f,1.11000001f,-0.519999981f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-            }
+                SetFocusedOption('C');
             else if (secilenSik == 'B')
-            {
-                
-                secilenSik = 'D';
-                pencil.transform.position = new Vector3(-0.230000004f,1.11000001f,-0.49000001f);
-                pencil.transform.rotation = Quaternion.Euler(-50.3f, 178.336f, -122.212f);
-            }
+                SetFocusedOption('D');
+        }
+    }
+
+    private void SetFocusedOption(char option)
+    {
+        secilenSik = option;
+
+        if (pencil == null)
+            return;
+
+        Vector3 position;
+
+        switch (option)
+        {
+            case 'A':
+                position = new Vector3(-0.06f, 1.11f, -0.57f);
+                break;
+
+            case 'B':
+                position = new Vector3(-0.23f, 1.11f, -0.57f);
+                break;
+
+            case 'C':
+                position = new Vector3(-0.06f, 1.11f, -0.52f);
+                break;
+
+            case 'D':
+                position = new Vector3(-0.23f, 1.11f, -0.49f);
+                break;
+
+            default:
+                return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            switch (secilenSik)
-            {
-                case 'A':
-                    SelectAnswer(0);
-                    break;
-                case 'B':
-                    SelectAnswer(1);
-                    break;
-                case 'C':
-                    SelectAnswer(2);
-                    break;
-                case 'D':
-                    SelectAnswer(3);
-                    break;
-            }
-        }
+        pencil.transform.SetPositionAndRotation(
+            position,
+            Quaternion.Euler(-50.3f, 178.336f, -122.212f)
+        );
     }
 
     public void NextPage()
     {
         if (selectedAnswers == null ||
-            currentPage >= questions.Length - 1)
+            examFinished || confirmationOpen)
             return;
 
+        if (currentPage >= questions.Length - 1)
+        {
+            ShowFinishQuestion();
+            return;
+        }
+
         currentPage++;
+        RestoreFocus();
         RefreshPage();
     }
 
     public void PreviousPage()
     {
-        if (selectedAnswers == null || currentPage <= 0)
+        if (selectedAnswers == null || examFinished)
+            return;
+
+        if (confirmationOpen)
+        {
+            CancelFinish();
+            return;
+        }
+
+        if (currentPage <= 0)
             return;
 
         currentPage--;
+        RestoreFocus();
         RefreshPage();
+    }
+
+    private void RestoreFocus()
+    {
+        int answer = selectedAnswers[currentPage];
+
+        SetFocusedOption(
+            answer >= 0 ? (char)('A' + answer) : 'A'
+        );
     }
 
     public void SelectAnswer(int answerIndex)
     {
         if (selectedAnswers == null ||
+            examFinished || confirmationOpen ||
             answerIndex < 0 || answerIndex > 3)
             return;
 
@@ -247,136 +540,233 @@ public int examQuestionCount = 10;
     }
 
     private void RefreshPage()
-{
-    Question q = questions[currentPage];
-
-    questionText.text = $"Soru {currentPage + 1}\n\n{q.question}";
-
-    optionAText.text = $"A) {q.optionA}";
-    optionBText.text = $"B) {q.optionB}";
-    optionCText.text = $"C) {q.optionC}";
-    optionDText.text = $"D) {q.optionD}";
-
-    int answer = selectedAnswers[currentPage];
-
-    yuvarlakA.SetActive(answer == 0);
-    yuvarlakB.SetActive(answer == 1);
-    yuvarlakC.SetActive(answer == 2);
-    yuvarlakD.SetActive(answer == 3);
-
-    if (pageNumberText != null)
     {
-        pageNumberText.text =
-            $"{currentPage + 1} / {questions.Length}";
-    }
-}
+        Question q = questions[currentPage];
 
-//     private string FormatOption(int index, string letter, string text)
-// {
-//     string mark = selectedAnswers[currentPage] == index
-//         ? "[<s>///</s>]"
-//         : "[   ]";
+        questionText.text =
+            $"Soru {currentPage + 1}\n\n{q.question}";
 
-//     return $"{mark} {letter}) {text}";
-// }
+        optionAText.text = $"A) {q.optionA}";
+        optionBText.text = $"B) {q.optionB}";
+        optionCText.text = $"C) {q.optionC}";
+        optionDText.text = $"D) {q.optionD}";
 
-   private bool LoadRandomQuestions()
-{
-    if (questionsJson == null)
-    {
-        Debug.LogError("JSON dosyasını bağla.", this);
-        return false;
+        int answer = selectedAnswers[currentPage];
+
+        yuvarlakA.SetActive(answer == 0);
+        yuvarlakB.SetActive(answer == 1);
+        yuvarlakC.SetActive(answer == 2);
+        yuvarlakD.SetActive(answer == 3);
     }
 
-    JsonRoot data;
+    private void ShowFinishQuestion()
+    {
+        confirmationOpen = true;
 
-    try
-    {
-        data = JsonUtility.FromJson<JsonRoot>(questionsJson.text);
-    }
-    catch (Exception exception)
-    {
-        Debug.LogError($"JSON okunamadı: {exception.Message}", this);
-        return false;
-    }
+        questionText.text = "Sınavı bitirmek ister misin?";
 
-    if (data == null || data.categories == null ||
-        data.categories.Length == 0)
-    {
-        Debug.LogError("JSON içinde kategori bulunamadı.", this);
-        return false;
+        optionAText.text = "A) Evet";
+        optionBText.text = "B) Hayır";
+        optionCText.text = "";
+        optionDText.text = "";
+
+        HideCircles();
+        SetFocusedOption('A');
     }
 
-    List<Question> examQuestions = new List<Question>();
-
-    foreach (JsonCategory category in data.categories)
+    private void HandleFinishInput()
     {
-        if (category == null || category.questions == null)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            SetFocusedOption('A');
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+            SetFocusedOption('B');
+
+        if (Input.GetKeyDown(KeyCode.Q) ||
+            Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.LogError("Boş kategori bulundu.", this);
-            return false;
+            CancelFinish();
+            return;
         }
 
-        List<Question> categoryPool = new List<Question>();
-
-        foreach (JsonQuestion item in category.questions)
+        if (Input.GetKeyDown(KeyCode.Return) ||
+            Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (item == null ||
-                item.type != "text" ||
-                string.IsNullOrWhiteSpace(item.question) ||
-                item.options == null ||
-                item.options.Length != 4)
-                continue;
+            if (secilenSik == 'A')
+                FinishExam();
+            else if (secilenSik == 'B')
+                CancelFinish();
+        }
+    }
 
-            int correctIndex = Array.IndexOf(
-                item.options, item.correctAnswer
-            );
+    public void CancelFinish()
+    {
+        if (examFinished || !confirmationOpen)
+            return;
 
-            if (correctIndex < 0)
-                continue;
+        confirmationOpen = false;
 
-            categoryPool.Add(new Question
-            {
-                question = item.question,
-                optionA = item.options[0],
-                optionB = item.options[1],
-                optionC = item.options[2],
-                optionD = item.options[3],
-                correctAnswer = correctIndex
-            });
+        RestoreFocus();
+        RefreshPage();
+    }
+
+    public void FinishExam()
+    {
+        if (!confirmationOpen || examFinished ||
+            selectedAnswers == null)
+            return;
+
+        examFinished = true;
+        confirmationOpen = false;
+
+        int correct = GetCorrectCount();
+        int blank = 0;
+
+        foreach (int answer in selectedAnswers)
+        {
+            if (answer == -1)
+                blank++;
         }
 
-        if (categoryPool.Count == 0)
-        {
-            Debug.LogError(
-                $"{category.category} kategorisinde uygun soru yok.",
-                this
-            );
-            return false;
-        }
+        int wrong = questions.Length - correct - blank;
 
-        int randomIndex = UnityEngine.Random.Range(
-            0, categoryPool.Count
+        int score = Mathf.RoundToInt(
+            correct * 100f / questions.Length
         );
 
-        examQuestions.Add(categoryPool[randomIndex]);
+        questionText.text = "SINAV SONUCU";
+
+        optionAText.text = $"Doğru: {correct}";
+        optionBText.text = $"Yanlış: {wrong}";
+        optionCText.text = $"Boş: {blank}";
+        optionDText.text = $"Puan: {score} / 100";
+
+        HideCircles();
+        pencil.SetActive(false);
+
+        if (controlsToDisableOnFinish != null)
+        {
+            foreach (Behaviour control in controlsToDisableOnFinish)
+            {
+                if (control != null)
+                    control.enabled = false;
+            }
+        }
+
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    // Seçilen soruların sayfa sırasını karıştır.
-    for (int i = examQuestions.Count - 1; i > 0; i--)
+    private void HideCircles()
     {
-        int randomIndex = UnityEngine.Random.Range(0, i + 1);
-
-        Question temporary = examQuestions[i];
-        examQuestions[i] = examQuestions[randomIndex];
-        examQuestions[randomIndex] = temporary;
+        yuvarlakA.SetActive(false);
+        yuvarlakB.SetActive(false);
+        yuvarlakC.SetActive(false);
+        yuvarlakD.SetActive(false);
     }
 
-    questions = examQuestions.ToArray();
-    currentPage = 0;
+    private bool LoadRandomQuestions()
+    {
+        if (questionsJson == null)
+        {
+            Debug.LogError("JSON dosyasını bağla.", this);
+            return false;
+        }
 
-    return true;
-}
+        JsonRoot data;
+
+        try
+        {
+            data = JsonUtility.FromJson<JsonRoot>(questionsJson.text);
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                $"JSON okunamadı: {exception.Message}",
+                this
+            );
+
+            return false;
+        }
+
+        if (data == null || data.categories == null ||
+            data.categories.Length == 0)
+        {
+            Debug.LogError("JSON içinde kategori bulunamadı.", this);
+            return false;
+        }
+
+        List<Question> examQuestions = new List<Question>();
+
+        foreach (JsonCategory category in data.categories)
+        {
+            if (category == null || category.questions == null)
+            {
+                Debug.LogError("Boş kategori bulundu.", this);
+                return false;
+            }
+
+            List<Question> categoryPool = new List<Question>();
+
+            foreach (JsonQuestion item in category.questions)
+            {
+                if (item == null ||
+                    item.type != "text" ||
+                    string.IsNullOrWhiteSpace(item.question) ||
+                    item.options == null ||
+                    item.options.Length != 4)
+                    continue;
+
+                int correctIndex = Array.IndexOf(
+                    item.options,
+                    item.correctAnswer
+                );
+
+                if (correctIndex < 0)
+                    continue;
+
+                categoryPool.Add(new Question
+                {
+                    question = item.question,
+                    optionA = item.options[0],
+                    optionB = item.options[1],
+                    optionC = item.options[2],
+                    optionD = item.options[3],
+                    correctAnswer = correctIndex
+                });
+            }
+
+            if (categoryPool.Count == 0)
+            {
+                Debug.LogError(
+                    $"{category.category} kategorisinde uygun soru yok.",
+                    this
+                );
+
+                return false;
+            }
+
+            int randomIndex = UnityEngine.Random.Range(
+                0,
+                categoryPool.Count
+            );
+
+            examQuestions.Add(categoryPool[randomIndex]);
+        }
+
+        // Her kategoriden seçilen birer sorunun sırasını karıştır.
+        for (int i = examQuestions.Count - 1; i > 0; i--)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, i + 1);
+
+            Question temporary = examQuestions[i];
+            examQuestions[i] = examQuestions[randomIndex];
+            examQuestions[randomIndex] = temporary;
+        }
+
+        questions = examQuestions.ToArray();
+        return true;
+    }
 
     public int GetCorrectCount()
     {
